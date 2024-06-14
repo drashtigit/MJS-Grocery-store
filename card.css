@@ -1,0 +1,186 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(83, 79, 79);
+}
+
+.payment-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.cart{
+  color: white;
+}
+.cart-items {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.cart-item {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+/* background-color: rgb(233, 228, 228); */
+background-color: white;
+height: 75px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+size: 100rem;
+}
+.cart-item:hover{
+background-color: rgb(218, 213, 213);
+/* background-color: white; */
+}
+
+.cart-item-info {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.cart-item-info img {
+  margin-right: 10px;
+  width: 50px;
+}
+
+.name-price {
+  text-align: left;
+}
+
+.name {
+  display: block;
+  font-weight: bold;
+}
+
+.price {
+  display: block;
+}
+
+.quantity {
+  margin-left: auto;
+}
+
+/* Styles for increase and decrease buttons */
+.quantity button {
+  margin-left: 5px;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.quantity button:hover {
+  background-color: #0056b3;
+}
+.total-payment{
+/* padding-top: 10rem;
+padding-left: 10rem; */
+padding-top: 2rem;
+border: 1px solid black;
+margin-top: 10rem;
+margin-left: 2rem;
+text-align: center;
+justify-content: center;
+height: 15rem;
+width: 20rem;
+border-radius: 5%;
+color: black;
+background-color: white;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+#total-price
+{
+size: 20rem;
+}
+#paynowBtn {
+background-color: #4CAF50; /* Green background color */
+color: white; /* Text color */
+padding: 10px 20px; /* Padding for button */
+border: none; /* Remove border */
+border-radius: 20px; /* Rounded corners */
+cursor: pointer; /* Change cursor to pointer on hover */
+margin-top: 1.5rem;
+width: 10rem;
+height: 3rem;
+font-size: 20px;
+}
+
+#paynowBtn:hover {
+background-color: #39893d; /* Darker green on hover */
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .payment-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .cart-items {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .total-payment {
+    margin-top: 2rem;
+    margin-left: 0;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-item {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+  }
+
+  .cart-item-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cart-item-info img {
+    margin-bottom: 10px;
+  }
+
+  .quantity {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  #paynowBtn {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  .total-payment {
+    padding: 1rem;
+  }
+}
+
+/* button.delete
+{
+  color: black;
+  background-color: white;
+} */
