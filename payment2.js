@@ -5,11 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const payNowButton = document.getElementById('payNowBtn');
     const paymentContainer = document.querySelector('.payment-container');
 
-    // Get total amount payable from localStorage
     const totalAmount = parseFloat(localStorage.getItem('totalPrice')) || 0;
     totalAmountElement.textContent = totalAmount.toFixed(2);
 
-    // Show/hide card details based on payment method
     paymentMethodElement.addEventListener('change', function() {
         if (this.value === 'online') {
             cardDetailsElement.style.display = 'block';
@@ -26,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const locationAddress = document.getElementById('location-address').value;
         const paymentMethod = paymentMethodElement.value;
 
-        // Simple validation (extend as needed)
         if (userName && locationAddress && paymentMethod) {
             if (paymentMethod === 'online') {
                 const cardNumber = document.getElementById('card-number').value;

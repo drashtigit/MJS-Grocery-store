@@ -1,26 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Get all navbar links
+
     const navbarLinks = document.querySelectorAll('.navbar a');
-
-    // Function to handle click event
     function handleLinkClick(event) {
-        event.preventDefault(); // Prevent default anchor behavior
+        event.preventDefault(); 
 
-        // Get the target section id from the link's href
         const targetId = event.currentTarget.getAttribute('href').substring(1);
 
-        // Get the target section element
         const targetSection = document.getElementById(targetId);
 
-        // Scroll to the target section
         if (targetSection) {
             targetSection.scrollIntoView({
-                behavior: 'smooth' // Smooth scroll
+                behavior: 'smooth' 
             });
         }
     }
 
-    // Attach click event listener to each navbar link
     navbarLinks.forEach(link => {
         link.addEventListener('click', handleLinkClick);
     });
@@ -32,13 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-  
-    
-
-
-
-
   function animateOnScroll() {
     var elements = document.querySelectorAll('.scroll-animation');
 
@@ -46,26 +33,22 @@ document.addEventListener('DOMContentLoaded', function() {
         var distanceFromTop = element.getBoundingClientRect().top;
         var windowHeight = window.innerHeight;
 
-        // Check if the element is in view when scrolling down
         if (distanceFromTop - windowHeight <= 0) {
             element.classList.add('active');
         } else {
-            element.classList.remove('active'); // Remove the 'active' class if the element is not in view when scrolling down
+            element.classList.remove('active'); 
         }
 
-        // Check if the element is in view when scrolling up
         var distanceFromBottom = element.getBoundingClientRect().bottom;
         if (distanceFromBottom >= 0 && distanceFromBottom <= windowHeight) {
             element.classList.add('active');
         } else {
-            element.classList.remove('active'); // Remove the 'active' class if the element is not in view when scrolling up
+            element.classList.remove('active');
         }
     });
 }
 
 window.addEventListener('scroll', animateOnScroll);
-
-// Trigger animation on page load
 animateOnScroll();
 
 
@@ -80,9 +63,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let totalPrice = 0;
     let totalItemCount = 0;
 
-    loadCartFromLocalStorage(); // Load cart from localStorage on page load
-
-    // Update initial total price and item count
+    loadCartFromLocalStorage(); 
+    
     updateTotalPrice();
     updateCartItemCount();
 
@@ -122,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             updateTotalPrice();
             updateCartItemCount();
-            saveCartToLocalStorage(); // Save cart to localStorage
+            saveCartToLocalStorage(); 
 
             cartItem.querySelector('.increase').addEventListener('click', function () {
                 const currentQuantity = parseInt(cartItem.dataset.quantity);
@@ -132,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     cartItem.dataset.quantity = newQuantity;
                     updateTotalPrice();
                     updateCartItemCount();
-                    saveCartToLocalStorage(); // Save cart to localStorage
+                    saveCartToLocalStorage(); 
                 }
             });
 
@@ -144,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     cartItem.dataset.quantity = newQuantity;
                     updateTotalPrice();
                     updateCartItemCount();
-                    saveCartToLocalStorage(); // Save cart to localStorage
+                    saveCartToLocalStorage(); 
                 }
             });
 
@@ -152,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 cartItem.remove();
                 updateTotalPrice();
                 updateCartItemCount();
-                saveCartToLocalStorage(); // Save cart to localStorage
+                saveCartToLocalStorage(); 
             });
 
             cartItem.classList.add('added');
@@ -263,17 +245,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-
-
-
 let searchForm = document.querySelector('.search-form');
 let loginForm = document.querySelector('.login-form');
 let navbar = document.querySelector('.navbar');
 let shoppingCart=document.querySelector('.shopping-cart');
 
 document.querySelector('#cart-btn').addEventListener('click', (event) => {
-    event.stopPropagation(); // Prevent event bubbling
+    event.stopPropagation(); 
     shoppingCart.classList.toggle('active');
     navbar.classList.remove('active');
     loginForm.classList.remove('active');
@@ -281,7 +259,7 @@ document.querySelector('#cart-btn').addEventListener('click', (event) => {
 });
 
 document.querySelector('#search-btn').addEventListener('click', (event) => {
-    event.stopPropagation(); // Prevent event bubbling
+    event.stopPropagation(); 
     searchForm.classList.toggle('active');
     navbar.classList.remove('active');
     loginForm.classList.remove('active');
@@ -289,7 +267,7 @@ document.querySelector('#search-btn').addEventListener('click', (event) => {
 });
 
 document.querySelector('#login-btn').addEventListener('click', (event) => {
-    event.stopPropagation(); // Prevent event bubbling
+    event.stopPropagation();
     loginForm.classList.toggle('active');
     searchForm.classList.remove('active');
     navbar.classList.remove('active');
@@ -297,28 +275,23 @@ document.querySelector('#login-btn').addEventListener('click', (event) => {
 });
 
 document.querySelector('#menu-btn').addEventListener('click', (event) => {
-    event.stopPropagation(); // Prevent event bubbling
+    event.stopPropagation(); 
     navbar.classList.toggle('active');
     searchForm.classList.remove('active');
     loginForm.classList.remove('active');
     shoppingCart.classList.remove('active');
 });
 
-// Add click event listener to the document body to handle clicks anywhere on the screen
 document.body.addEventListener('click', (event) => {
     if (!event.target.closest('.search-form') && !event.target.closest('.login-form')) {
-        // Remove the 'active' class from all elements except search and login form
-        // searchForm.classList.remove('active');
+       
         loginForm.classList.remove('active');
         navbar.classList.remove('active');
-        // shoppingCart.classList.remove('active');
     }
 });
 
-// Add scroll event listener to the window to handle scrolling
 window.addEventListener('scroll', () => {
-    // Remove the 'active' class from all elements when scrolling occurs
-    // searchForm.classList.remove('active');
+    
     loginForm.classList.remove('active');
     navbar.classList.remove('active');
     shoppingCart.classList.remove('active');
@@ -334,30 +307,24 @@ window.addEventListener('scroll', () => {
 const searchBox = document.getElementById('search-box');
     const voiceSearchButton = document.getElementById('voice-search');
     
-    // Check if browser supports Web Speech API
     if ('webkitSpeechRecognition' in window) {
         const recognition = new webkitSpeechRecognition();
         
-        // Set recognition language to match user's language
         recognition.lang = navigator.language;
         
-        // Start recognition when voice search button is clicked
         voiceSearchButton.addEventListener('click', () => {
             recognition.start();
         });
 
-        // Handle recognition result
         recognition.onresult = (event) => {
             const result = event.results[0][0].transcript;
             searchBox.value = result;
         };
         
-        // Handle recognition error
         recognition.onerror = (event) => {
             console.error('Voice recognition error:', event.error);
         };
     } else {
-        // Web Speech API not supported, handle gracefully
         voiceSearchButton.style.display = 'none';
     }
 
@@ -375,23 +342,16 @@ const searchBox = document.getElementById('search-box');
         const shoppingCartContent = shoppingCart.querySelector('.content');
         const successPopup = document.getElementById('successPopup');
     
-        // Function to close the popup
         function closePopup() {
             successPopup.style.display = 'none';
         }
     
         addToCartButtons.forEach(button => {
             button.addEventListener('click', function(event) {
-                event.preventDefault(); // Prevent the default action of the button
-    
-                // Show the popup
+                event.preventDefault();
                 successPopup.style.display = 'block';
     
-                // Hide the popup after 3 seconds (adjust the duration as needed)
-                setTimeout(closePopup, 3000); // 3000 milliseconds = 3 seconds
-              
-                // Your existing logic for adding items to the cart...
-                // (I'm omitting it here for brevity)
+                setTimeout(closePopup, 3000); 
             });
         });
     });
@@ -452,7 +412,7 @@ const searchBox = document.getElementById('search-box');
         }
     
         searchBox.addEventListener('input', function() {
-            const query = searchBox.value.toLowerCase().trim(); // Trim leading and trailing spaces
+            const query = searchBox.value.toLowerCase().trim(); 
             showRecommendations(query);
         });
     
@@ -480,16 +440,13 @@ const searchBox = document.getElementById('search-box');
             }
         });
     
-        // Hide the recommendation list if clicked outside
         document.addEventListener('click', function(event) {
             if (!searchBox.contains(event.target) && !recommendationList.contains(event.target)) {
                 recommendationList.style.display = 'none';
             }
         });
-    
-        // Prevent the search form from toggling when clicking on recommendations
         document.querySelector('.recommendation-list').addEventListener('click', (event) => {
-            event.stopPropagation(); // Prevent event bubbling to the document body
+            event.stopPropagation(); 
         });
 
         document.querySelector('#search-btn').addEventListener('click', function() {
@@ -498,13 +455,11 @@ const searchBox = document.getElementById('search-box');
         });
 
 
-// Ensure recommendation list is hidden when login button is clicked
 document.querySelector('#login-btn').addEventListener('click', function() {
     recommendationList.innerHTML = '';
     recommendationList.style.display = 'none';
 });
 
-// Ensure recommendation list is hidden when cart button is clicked
 document.querySelector('#cart-btn').addEventListener('click', function() {
     recommendationList.innerHTML = '';
     recommendationList.style.display = 'none';

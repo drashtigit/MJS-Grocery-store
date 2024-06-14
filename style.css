@@ -38,17 +38,6 @@ body{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 .header .navbar.active{
     right: 2rem;
     transition: .4s linear;
@@ -342,21 +331,6 @@ section{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media(max-width: 768px)
 {
     .home{
@@ -601,22 +575,6 @@ background :white;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .hidden-content {
     display: none;
 }
@@ -631,7 +589,7 @@ background :white;
 }
 
 .search-form input[type="search"] {
-    padding-right: 30px; /* Adjust this value to accommodate the icon */
+    padding-right: 30px; 
 }
 
 .search-form .search-icon,
@@ -643,21 +601,12 @@ background :white;
 }
 
 .search-form .search-icon {
-    right: 10px; /* Adjust the distance from the input field */
+    right: 10px; 
 }
 
 .search-form .voice-icon {
     right: 0;
 }
-
-
-
-  
-
-
-
-
-
 
 
 .header .shopping-cart
@@ -693,10 +642,6 @@ display: block;
 text-align: center;
 margin: 1rem 0;
 }
-
-
-
-
 
 
 
@@ -771,18 +716,6 @@ margin: 1rem 0;
         transform: scale(1);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"); */
@@ -913,14 +846,14 @@ margin: 1rem 0;
 .popup {
     display: none;
     position: fixed;
-    bottom: 20px; /* Adjust as needed */
+    bottom: 20px;
     left: 30%;
     background-color: lightgreen;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    opacity: 1; /* Initial opacity */
-    transition: opacity 1s ease-in-out; /* Add transition for opacity */
+    opacity: 1; 
+    transition: opacity 1s ease-in-out; 
     z-index: 1000;
 }
 
@@ -939,7 +872,7 @@ margin: 1rem 0;
   }
   
 .popup.hidden {
-    opacity: 0; /* Change opacity to 0 for disappearing effect */
+    opacity: 0; 
 }
 
 
@@ -957,19 +890,6 @@ margin: 1rem 0;
         transform: translateX(-50%);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #category{
@@ -1032,8 +952,8 @@ margin: 1rem 0;
     transition: all ease 0.1s;
 }
 .category-box img{
-    height: 100px; /* Change the height here */
-    width: 80px; /* Change the width here */
+    height: 100px; 
+    width: 80px;
     object-fit: contain;
     object-position: center;
     transition: all ease 0.1s;
@@ -1046,40 +966,24 @@ margin: 1rem 0;
     }
   
     .category-box {
-        width: calc(50% - 20px); /* Adjust width for two boxes per row */
+        width: calc(50% - 20px); 
     }
 }
 
 @media only screen and (max-width: 480px) {
     .category-box {
-        width: 100%; /* Single column layout for smaller screens */
+        width: 100%; 
     }
 }
 
 
-
-
-
-
-
-
-
-
 .shopping-cart {
     position: fixed;
-    top: 50px; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
-    max-height: 300px; /* Set a maximum height for the shopping cart */
-    overflow-y: auto; /* Enable vertical scrolling */
+    top: 50px; 
+    right: 20px; 
+    max-height: 300px; 
+    overflow-y: auto; 
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -1108,8 +1012,8 @@ margin: 1rem 0;
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 15px; /* Increase size of trash icon */
-    color: var(--black); /* Change color of trash icon */
+    font-size: 15px; 
+    color: var(--black); 
     padding-right: 0px;
 }
 .quantity-controls {
@@ -1144,52 +1048,6 @@ margin: 1rem 0;
     font-weight: bold;
     margin-top: 10px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1249,28 +1107,8 @@ margin: 1rem 0;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .recommendation-list {
     list-style: none;
-    /* padding: 0;
-    margin: 0; */
     border: 1px solid #ccc;
     border-top: none;
     width: 500px;
@@ -1300,7 +1138,7 @@ margin: 1rem 0;
 
 
 .recommendation-list li.selected {
-    background-color: #eae8e8; /* Highlight color for selected item */
+    background-color: #eae8e8;
 }
 #search2
 {

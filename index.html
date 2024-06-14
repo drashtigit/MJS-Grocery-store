@@ -21,7 +21,6 @@
 <body>
    <header class="header">
     <a href="index.html" class="logo"><i class="fa-solid fa-basket-shopping"></i>  MJS</a>
-    <!-- <div id="location-btn"><i class="fa-solid fa-location-dot"></i></div> -->
     <nav class="navbar">
         <a href="#home">Home</a>
         <a href="#features">Features</a>
@@ -513,86 +512,7 @@
     <srcipt src="Best Deals JS.js"></script>
 
      
-      <script>
-        // Find all elements with the class "btn"
-        var btns = document.querySelectorAll('.btn2');
       
-        // Loop through each button and attach click event listener
-        btns.forEach(function(btn2) {
-          btn2.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default link behavior
-      
-            // Load CSS file
-            var cssFile = document.createElement('link');
-            cssFile.rel = 'stylesheet';
-            cssFile.type = 'text/css';
-            cssFile.href = 'Best deals CSS.css';
-            document.head.appendChild(cssFile);
-      
-            // Load JavaScript file
-            var jsFile = document.createElement('script');
-            jsFile.src = 'Best Deals JS.js';
-            document.body.appendChild(jsFile);
-      
-            // Instead of opening in a new window/tab, change the location of the current window
-            window.location.href = 'Best deals HTML.html';
-          });
-        });
-    </script>
-
-
-
-
-
-
-<script>
-    // Find all elements with the class "btn3"
-    var btns = document.querySelectorAll('.btn3');
-  
-    // Loop through each button and attach click event listener
-    btns.forEach(function(btn3) {
-      btn3.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default link behavior
-  
-        // Load CSS file
-        var cssFile = document.createElement('link');
-        cssFile.rel = 'stylesheet';
-        cssFile.type = 'text/css';
-        cssFile.href = 'Feedback Form CSS.css';
-        document.head.appendChild(cssFile); 
-  
-        // Open Feedback Form HTML and then Feedback Form Confirm HTML and CSS
-        window.location.href = 'Feedback Form HTML.html';
-        setTimeout(function() {
-          window.location.href = 'Feedback Form Confirm HTML and CSS.html';
-        }, 1000); // Adjust delay as needed
-      });
-    });
-</script>
-
-
-
-
-
-
-
-
-
-
-
-<script>
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a.links').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('id');
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-</script>
 
 
 
