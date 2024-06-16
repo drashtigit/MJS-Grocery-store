@@ -428,11 +428,10 @@ document.addEventListener('DOMContentLoaded', function () {
             var distanceFromTop = element.getBoundingClientRect().top;
             var windowHeight = window.innerHeight;
     
-            // Check if the element is in view when scrolling down
             if (distanceFromTop - windowHeight <= 0) {
                 element.classList.add('active');
             } else {
-                element.classList.remove('active'); // Remove the 'active' class if the element is not in view when scrolling down
+                element.classList.remove('active'); 
             }
     
             // Check if the element is in view when scrolling up
@@ -440,7 +439,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (distanceFromBottom >= 0 && distanceFromBottom <= windowHeight) {
                 element.classList.add('active');
             } else {
-                element.classList.remove('active'); // Remove the 'active' class if the element is not in view when scrolling up
+                element.classList.remove('active'); 
             }
         });
     }
@@ -466,14 +465,14 @@ document.addEventListener('DOMContentLoaded', function () {
       
         leftButton.addEventListener('click', function() {
           carousel.scrollBy({
-            left: -300, // Adjust scroll amount as needed
+            left: -300, 
             behavior: 'smooth'
           });
         });
       
         rightButton.addEventListener('click', function() {
           carousel.scrollBy({
-            left: 300, // Adjust scroll amount as needed
+            left: 300, 
             behavior: 'smooth'
           });
         });
@@ -493,28 +492,24 @@ document.addEventListener('DOMContentLoaded', function () {
       
 
       document.addEventListener('DOMContentLoaded', function() {
-        // Get all navbar links
+        
         const navbarLinks = document.querySelectorAll('.navbar a');
 
-        // Function to handle click event
+        
         function handleLinkClick(event) {
-            event.preventDefault(); // Prevent default anchor behavior
+            event.preventDefault(); 
 
-            // Get the target section id from the link's href
             const targetId = event.currentTarget.getAttribute('href').substring(1);
 
-            // Get the target section element
             const targetSection = document.getElementById(targetId);
 
-            // Scroll to the target section
             if (targetSection) {
                 targetSection.scrollIntoView({
-                    behavior: 'smooth' // Smooth scroll
+                    behavior: 'smooth' 
                 });
             }
         }
 
-        // Attach click event listener to each navbar link
         navbarLinks.forEach(link => {
             link.addEventListener('click', handleLinkClick);
         });
@@ -533,115 +528,115 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    document.addEventListener('DOMContentLoaded', function() {
-        const searchBox = document.getElementById('search-box');
-        const recommendationList = document.getElementById('recommendation-list');
-        let selectedRecommendationIndex = -1;
+//     document.addEventListener('DOMContentLoaded', function() {
+//         const searchBox = document.getElementById('search-box');
+//         const recommendationList = document.getElementById('recommendation-list');
+//         let selectedRecommendationIndex = -1;
     
-        // Sample data for recommendations
-        const sampleData = [
-            'Kaju', 'Moong Dal', 'Anjeer', 'Badam', 'Bajra', 'Beans', 'Besan', 'Akhrot', 'Brush', 'Caramon', 
-            'Chaipatti', 'Chocolates', 'Clothes Soap', 'Cloves', 'Coffe', 'Garam Masala', 'Gehu', 'Haldi Powder',
-            'Handwash', 'Jaggery', 'Kishmish', 'Ghee', 'Laal Chana', 'Masoor Dal', 'Mirchi Powder', 'Oats', 'Oil',
-            'Pista', 'Rice', 'Salt', 'Shampoo', 'Soap', 'Sugar', 'Toor Dal', 'Urad Dal', 'Washing Powder', 'Moth'
-        ];
+//         // Sample data for recommendations
+//         const sampleData = [
+//             'Kaju', 'Moong Dal', 'Anjeer', 'Badam', 'Bajra', 'Beans', 'Besan', 'Akhrot', 'Brush', 'Caramon', 
+//             'Chaipatti', 'Chocolates', 'Clothes Soap', 'Cloves', 'Coffe', 'Garam Masala', 'Gehu', 'Haldi Powder',
+//             'Handwash', 'Jaggery', 'Kishmish', 'Ghee', 'Laal Chana', 'Masoor Dal', 'Mirchi Powder', 'Oats', 'Oil',
+//             'Pista', 'Rice', 'Salt', 'Shampoo', 'Soap', 'Sugar', 'Toor Dal', 'Urad Dal', 'Washing Powder', 'Moth'
+//         ];
     
-        function showRecommendations(query) {
-            recommendationList.innerHTML = '';
+//         function showRecommendations(query) {
+//             recommendationList.innerHTML = '';
     
-            if (query.trim()) { // Trim leading and trailing spaces
-                const filteredData = sampleData.filter(item => item.toLowerCase().includes(query.toLowerCase()));
+//             if (query.trim()) { // Trim leading and trailing spaces
+//                 const filteredData = sampleData.filter(item => item.toLowerCase().includes(query.toLowerCase()));
     
-                filteredData.forEach((item, index) => {
-                    const listItem = document.createElement('li');
-                    listItem.innerHTML = `<i class="fas fa-search" id="search2"></i>&nbsp &nbsp &nbsp ${item}`;
-                    listItem.addEventListener('click', function() {
-                        searchBox.value = item;
-                        recommendationList.innerHTML = '';
-                        recommendationList.style.display = 'none';
-                    });
-                    recommendationList.appendChild(listItem);
-                });
+//                 filteredData.forEach((item, index) => {
+//                     const listItem = document.createElement('li');
+//                     listItem.innerHTML = `<i class="fas fa-search" id="search2"></i>&nbsp &nbsp &nbsp ${item}`;
+//                     listItem.addEventListener('click', function() {
+//                         searchBox.value = item;
+//                         recommendationList.innerHTML = '';
+//                         recommendationList.style.display = 'none';
+//                     });
+//                     recommendationList.appendChild(listItem);
+//                 });
     
-                selectedRecommendationIndex = -1; // Reset selection when new recommendations are shown
-                recommendationList.style.display = 'block';
-            } else {
-                recommendationList.style.display = 'none';
-            }
-        }
+//                 selectedRecommendationIndex = -1; // Reset selection when new recommendations are shown
+//                 recommendationList.style.display = 'block';
+//             } else {
+//                 recommendationList.style.display = 'none';
+//             }
+//         }
     
-        function highlightRecommendation() {
-            const recommendations = recommendationList.querySelectorAll('li');
-            recommendations.forEach((item, index) => {
-                if (index === selectedRecommendationIndex) {
-                    item.classList.add('selected');
-                    item.scrollIntoView({ block: 'nearest' });
-                } else {
-                    item.classList.remove('selected');
-                }
-            });
-        }
+//         function highlightRecommendation() {
+//             const recommendations = recommendationList.querySelectorAll('li');
+//             recommendations.forEach((item, index) => {
+//                 if (index === selectedRecommendationIndex) {
+//                     item.classList.add('selected');
+//                     item.scrollIntoView({ block: 'nearest' });
+//                 } else {
+//                     item.classList.remove('selected');
+//                 }
+//             });
+//         }
     
-        searchBox.addEventListener('input', function() {
-            const query = searchBox.value.toLowerCase().trim(); // Trim leading and trailing spaces
-            showRecommendations(query);
-        });
+//         searchBox.addEventListener('input', function() {
+//             const query = searchBox.value.toLowerCase().trim(); // Trim leading and trailing spaces
+//             showRecommendations(query);
+//         });
     
-        searchBox.addEventListener('keydown', function(event) {
-            const recommendations = recommendationList.querySelectorAll('li');
-            if (event.key === 'ArrowDown') {
-                event.preventDefault();
-                if (selectedRecommendationIndex < recommendations.length - 1) {
-                    selectedRecommendationIndex++;
-                    highlightRecommendation();
-                }
-            } else if (event.key === 'ArrowUp') {
-                event.preventDefault();
-                if (selectedRecommendationIndex > 0) {
-                    selectedRecommendationIndex--;
-                    highlightRecommendation();
-                }
-            } else if (event.key === 'Enter' && selectedRecommendationIndex !== -1) {
-                event.preventDefault();
-                const selectedRecommendation = recommendations[selectedRecommendationIndex];
-                if (selectedRecommendation) {
-                    searchBox.value = selectedRecommendation.textContent;
-                    recommendationList.style.display = 'none';
-                }
-            }
-        });
+//         searchBox.addEventListener('keydown', function(event) {
+//             const recommendations = recommendationList.querySelectorAll('li');
+//             if (event.key === 'ArrowDown') {
+//                 event.preventDefault();
+//                 if (selectedRecommendationIndex < recommendations.length - 1) {
+//                     selectedRecommendationIndex++;
+//                     highlightRecommendation();
+//                 }
+//             } else if (event.key === 'ArrowUp') {
+//                 event.preventDefault();
+//                 if (selectedRecommendationIndex > 0) {
+//                     selectedRecommendationIndex--;
+//                     highlightRecommendation();
+//                 }
+//             } else if (event.key === 'Enter' && selectedRecommendationIndex !== -1) {
+//                 event.preventDefault();
+//                 const selectedRecommendation = recommendations[selectedRecommendationIndex];
+//                 if (selectedRecommendation) {
+//                     searchBox.value = selectedRecommendation.textContent;
+//                     recommendationList.style.display = 'none';
+//                 }
+//             }
+//         });
     
-        // Hide the recommendation list if clicked outside
-        document.addEventListener('click', function(event) {
-            if (!searchBox.contains(event.target) && !recommendationList.contains(event.target)) {
-                recommendationList.style.display = 'none';
-            }
-        });
+//         // Hide the recommendation list if clicked outside
+//         document.addEventListener('click', function(event) {
+//             if (!searchBox.contains(event.target) && !recommendationList.contains(event.target)) {
+//                 recommendationList.style.display = 'none';
+//             }
+//         });
     
-        // Prevent the search form from toggling when clicking on recommendations
-        document.querySelector('.recommendation-list').addEventListener('click', (event) => {
-            event.stopPropagation(); // Prevent event bubbling to the document body
-        });
+//         // Prevent the search form from toggling when clicking on recommendations
+//         document.querySelector('.recommendation-list').addEventListener('click', (event) => {
+//             event.stopPropagation(); // Prevent event bubbling to the document body
+//         });
 
-        document.querySelector('#search-btn').addEventListener('click', function() {
-            recommendationList.innerHTML = '';
-            recommendationList.style.display = 'none';
-        });
+//         document.querySelector('#search-btn').addEventListener('click', function() {
+//             recommendationList.innerHTML = '';
+//             recommendationList.style.display = 'none';
+//         });
 
 
-// Ensure recommendation list is hidden when login button is clicked
-document.querySelector('#login-btn').addEventListener('click', function() {
-    recommendationList.innerHTML = '';
-    recommendationList.style.display = 'none';
-});
+// // Ensure recommendation list is hidden when login button is clicked
+// document.querySelector('#login-btn').addEventListener('click', function() {
+//     recommendationList.innerHTML = '';
+//     recommendationList.style.display = 'none';
+// });
 
-// Ensure recommendation list is hidden when cart button is clicked
-document.querySelector('#cart-btn').addEventListener('click', function() {
-    recommendationList.innerHTML = '';
-    recommendationList.style.display = 'none';
-});
+// // Ensure recommendation list is hidden when cart button is clicked
+// document.querySelector('#cart-btn').addEventListener('click', function() {
+//     recommendationList.innerHTML = '';
+//     recommendationList.style.display = 'none';
+// });
 
-    });
+//     });
     
   
 
