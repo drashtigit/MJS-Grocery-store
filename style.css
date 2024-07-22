@@ -325,7 +325,7 @@ section{
     text-align: center;
     padding-top: 10%;
     font-size: 18px;
-    background: url(grocery.jpg) ;
+    background: url('images/grocery.jpg') ;
     background-size: cover;
     width: 100%;
 }
